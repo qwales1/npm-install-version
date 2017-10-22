@@ -13,19 +13,17 @@
     "multiple",
     "versions"
   ],
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "files": [
-    "lib/",
     "src/"
   ],
   "bin": {
-    "niv": "lib/cli.js",
-    "npm-install-version": "lib/cli.js"
+    "niv": "src/cli.js",
+    "npm-install-version": "src/cli.js"
   },
   "scripts": {
     "build": "shx rm -rf lib/ && shx mkdir lib/ && babel --copy-files --source-maps --out-dir lib/ src/",
     "lint": "semistandard --fix",
-    "postinstall": "postinstall-build lib/ \"npm run build\"",
     "test": "npm run build && node lib/test/index.js"
   },
   "dependencies": {
